@@ -50,10 +50,14 @@ class OnboardingContainerViewController: UIViewController {
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
-            view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor)
+//            view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
+//            view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
+//            view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
+//            view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor)
+            pageViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            pageViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pageViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pageViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
