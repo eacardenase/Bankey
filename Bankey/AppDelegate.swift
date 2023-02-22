@@ -12,6 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var hasOnboarded = false
+    
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
@@ -44,7 +46,7 @@ extension AppDelegate {
         window.rootViewController = vc
         window.makeKeyAndVisible()
         UIView.transition(with: window,
-                          duration: 0.5,
+                          duration: 0.3,
                           options: .transitionCrossDissolve,
                           animations: nil,
                           completion: nil
@@ -55,6 +57,12 @@ extension AppDelegate {
 // MARK: - LoginViewControllerDelegate
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
+        if hasOnboarded {
+            setRootViewController(dummyViewController)
+            
+            return
+        }
+        
         setRootViewController(onboardingContainerViewController)
     }
 }
@@ -62,6 +70,8 @@ extension AppDelegate: LoginViewControllerDelegate {
 // MARK: - OnboardingViewControllerDelegate
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
+        hasOnboarded = true
+        
         setRootViewController(dummyViewController)
     }
 }
