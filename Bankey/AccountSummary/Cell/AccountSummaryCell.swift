@@ -87,7 +87,7 @@ extension AccountSummaryCell {
             underlineView.leadingAnchor.constraint(equalTo: typeLabel.leadingAnchor),
             underlineView.heightAnchor.constraint(equalToConstant: 4),
             underlineView.widthAnchor.constraint(equalToConstant: 60),
-            
+
             nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
             nameLabel.leadingAnchor.constraint(equalTo: typeLabel.leadingAnchor),
             

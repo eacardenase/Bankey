@@ -65,8 +65,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="je8-Ba-ApW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="743-iK-iN8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="je8-Ba-ApW" secondAttribute="trailing" constant="16" id="899-tI-XQH"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="je8-Ba-ApW" secondAttribute="bottom" constant="16" id="TGj-xD-96W"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="je8-Ba-ApW" secondAttribute="trailing" priority="999" constant="16" id="899-tI-XQH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="je8-Ba-ApW" secondAttribute="bottom" priority="999" constant="16" id="TGj-xD-96W" userLabel="Safe Area.bottom = Stack View.bottom + 16"/>
                 <constraint firstItem="je8-Ba-ApW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="alL-jk-Myq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
