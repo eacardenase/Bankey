@@ -20,9 +20,9 @@ class AccountSummaryCell: UITableViewCell {
         let accountName: String
         let balance: Decimal
         
-//        var balanceAttributedString: NSAttributedString {
-////            return CurrencyFormatter().makeAttributedCurrency(balance)
-//        }
+        var balanceAttributedString: NSAttributedString {
+            return CurrencyFormatter().makeAttributtedCurrency(balance)
+        }
     }
     
     let viewModel: ViewModel? = nil
@@ -79,7 +79,7 @@ extension AccountSummaryCell {
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
-        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "929,466", cents: "63") //"$929,466.63"
+        balanceAmountLabel.text = "$XXX,XXX.XX"
         
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
         chevronImageView.image = UIImage(systemName: "chevron.right")
@@ -117,21 +117,6 @@ extension AccountSummaryCell {
             trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 1)
         ])
     }
-    
-    private func makeFormattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
-        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
-        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
-        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
-        
-        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
-        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
-        let centString = NSAttributedString(string: cents, attributes: centAttributes)
-        
-        rootString.append(dollarString)
-        rootString.append(centString)
-        
-        return rootString
-    }
 }
 
 extension AccountSummaryCell {
@@ -139,7 +124,7 @@ extension AccountSummaryCell {
         
         typeLabel.text = vm.accountType.rawValue
         nameLabel.text = vm.accountName
-//        balanceAmountLabel.attributedText = vm.balanceAttributedString
+        balanceAmountLabel.attributedText = vm.balanceAttributedString
         
         switch vm.accountType {
         case .Banking:
