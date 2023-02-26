@@ -21,7 +21,7 @@
 		209B80CE29ABD56000E4EEAF /* DecimalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B80CD29ABD56000E4EEAF /* DecimalUtil.swift */; };
 		209B80D029ABD5BF00E4EEAF /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B80CF29ABD5BF00E4EEAF /* CurrencyFormatter.swift */; };
 		20A286A729A44A7400973A8F /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A286A629A44A7400973A8F /* OnboardingContainerViewController.swift */; };
-		20B9397E29AC1611006ADA97 /* BankeyUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B9397D29AC1611006ADA97 /* BankeyUnitTests.swift */; };
+		20B9398529AC178E006ADA97 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B9398429AC178E006ADA97 /* CurrencyFormatterTests.swift */; };
 		20BA502D29A7FFF5002BE657 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA502C29A7FFF5002BE657 /* AccountSummaryViewController.swift */; };
 		20BA502F29A8056F002BE657 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA502E29A8056F002BE657 /* AccountSummaryHeaderView.swift */; };
 		20BA503129A805B6002BE657 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BA503029A805B6002BE657 /* AccountSummaryHeaderView.xib */; };
@@ -56,7 +56,7 @@
 		209B80CF29ABD5BF00E4EEAF /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		20A286A629A44A7400973A8F /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		20B9397B29AC1611006ADA97 /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		20B9397D29AC1611006ADA97 /* BankeyUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankeyUnitTests.swift; sourceTree = "<group>"; };
+		20B9398429AC178E006ADA97 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		20BA502C29A7FFF5002BE657 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		20BA502E29A8056F002BE657 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		20BA503029A805B6002BE657 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		20B9397C29AC1611006ADA97 /* BankeyUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				20B9397D29AC1611006ADA97 /* BankeyUnitTests.swift */,
+				20B9398429AC178E006ADA97 /* CurrencyFormatterTests.swift */,
 			);
 			path = BankeyUnitTests;
 			sourceTree = "<group>";
@@ -241,6 +241,7 @@
 					};
 					20B9397A29AC1611006ADA97 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 						TestTargetID = 20491FE129A3CBA9007B44A8;
 					};
 				};
@@ -310,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B9397E29AC1611006ADA97 /* BankeyUnitTests.swift in Sources */,
+				20B9398529AC178E006ADA97 /* CurrencyFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,14 +509,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DZDWNPN8YP;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eacardenase.BankeyUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bankey.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bankey";
@@ -526,10 +534,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DZDWNPN8YP;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eacardenase.BankeyUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
