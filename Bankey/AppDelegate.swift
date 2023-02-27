@@ -27,10 +27,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
+        registerForNotifications()
+        
         displayLogin()
         
         return true
         
+    }
+}
+
+extension AppDelegate {
+    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            
+            return
+        }
+        
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(with: window,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: nil,
+                          completion: nil
+        )
     }
     
     private func displayLogin() {
@@ -52,25 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = appColor
     }
-}
-
-extension AppDelegate {
-    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
-        guard animated, let window = self.window else {
-            self.window?.rootViewController = vc
-            self.window?.makeKeyAndVisible()
-            
-            return
-        }
-        
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
-        UIView.transition(with: window,
-                          duration: 0.3,
-                          options: .transitionCrossDissolve,
-                          animations: nil,
-                          completion: nil
-        )
+    
+    private func registerForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
     }
 }
 
@@ -94,7 +100,7 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
 
 // MARK: - LogoutDelegate
 extension AppDelegate: LogoutDelegate {
-    func didLogout() {
+    @objc func didLogout() {
         setRootViewController(loginViewController)
     }
 }
