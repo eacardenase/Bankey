@@ -30,6 +30,8 @@
 		20FE31AB29AD5C0000054E6C /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE31AA29AD5C0000054E6C /* UITextField+SecureToggle.swift */; };
 		20FF148329AEC65E00BD1239 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FF148229AEC65E00BD1239 /* Date+Utils.swift */; };
 		20FF148529AECBFC00BD1239 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FF148429AECBFC00BD1239 /* AccountSummaryViewController+Networking.swift */; };
+		20FF148929AEED1200BD1239 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FF148829AEED1200BD1239 /* ProfileTests.swift */; };
+		20FF148B29AEEF7100BD1239 /* AccountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FF148A29AEEF7100BD1239 /* AccountsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		20FE31AA29AD5C0000054E6C /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		20FF148229AEC65E00BD1239 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		20FF148429AECBFC00BD1239 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
+		20FF148829AEED1200BD1239 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		20FF148A29AEEF7100BD1239 /* AccountsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +199,8 @@
 		20B9397C29AC1611006ADA97 /* BankeyUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				20B9398429AC178E006ADA97 /* CurrencyFormatterTests.swift */,
+				20FF148729AEEBDB00BD1239 /* AccountSummary */,
+				20FF148629AEEBCD00BD1239 /* Utils */,
 			);
 			path = BankeyUnitTests;
 			sourceTree = "<group>";
@@ -207,6 +212,23 @@
 				20FF148429AECBFC00BD1239 /* AccountSummaryViewController+Networking.swift */,
 				202B980C29A9217B0039ED62 /* Header */,
 				202B980D29A921A70039ED62 /* Cell */,
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		20FF148629AEEBCD00BD1239 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				20B9398429AC178E006ADA97 /* CurrencyFormatterTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		20FF148729AEEBDB00BD1239 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				20FF148829AEED1200BD1239 /* ProfileTests.swift */,
+				20FF148A29AEEF7100BD1239 /* AccountsTests.swift */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -339,7 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20FF148B29AEEF7100BD1239 /* AccountsTests.swift in Sources */,
 				20B9398529AC178E006ADA97 /* CurrencyFormatterTests.swift in Sources */,
+				20FF148929AEED1200BD1239 /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
