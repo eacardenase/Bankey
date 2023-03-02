@@ -26,6 +26,14 @@ class AccountSummaryViewController: UIViewController {
     var profileManager: ProfileManageable = ProfileManager()
     var accountManager: AccountManageable = AccountManager()
     
+    // Error Alert
+    lazy var errorAlert: UIAlertController = {
+        let ac = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        return ac
+    }()
+    
     var isLoaded = false
     
     lazy var logoutBarButtonItem: UIBarButtonItem = {
@@ -230,11 +238,10 @@ extension AccountSummaryViewController {
     }
     
     private func showErrorAlert(title: String, message: String) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        errorAlert.title = title
+        errorAlert.message = message
         
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        
-        present(ac, animated: true)
+        present(errorAlert, animated: true)
     }
 }
 
@@ -264,5 +271,9 @@ extension AccountSummaryViewController {
 extension AccountSummaryViewController {
     func titleAndMessageForTesting(for error: NetworkError) -> (title: String, message: String) {
         return titleAndMessage(for: error)
+    }
+    
+    func fetchProfileForTesting() {
+        fetchProfile(group: DispatchGroup(), userId: "1")
     }
 }
