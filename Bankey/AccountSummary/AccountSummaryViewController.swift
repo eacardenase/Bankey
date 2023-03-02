@@ -145,7 +145,19 @@ extension AccountSummaryViewController {
             case .success(let profile):
                 self.profile = profile
             case .failure(let error):
-                print(error.localizedDescription)
+                let title: String
+                let message: String
+                
+                switch error {
+                case .serverError:
+                    title = "Server Error"
+                    message = "Ensure you are connected to the internet. Please try again."
+                case .decodingError:
+                    title = "Decoding Error"
+                    message = "We could not process your request. Please try again."
+                }
+                
+                self.showErrorAlert(title: title, message: message )
             }
             
             group.leave()
@@ -190,6 +202,14 @@ extension AccountSummaryViewController {
                 balance: $0.amount
             )
         }
+    }
+    
+    private func showErrorAlert(title: String, message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(ac, animated: true)
     }
 }
 
