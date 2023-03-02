@@ -24,6 +24,7 @@ class AccountSummaryViewController: UIViewController {
     
     // Networking
     var profileManager: ProfileManageable = ProfileManager()
+    var accountManager: AccountManageable = AccountManager()
     
     var isLoaded = false
     
@@ -155,7 +156,7 @@ extension AccountSummaryViewController {
         }
         
         group.enter()
-        fetchAccounts(forUserId: userId) { result in
+        accountManager.fetchAccounts(forUserId: userId) { result in
             switch result {
             case .success(let accounts):
                 self.accounts = accounts

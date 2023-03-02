@@ -30,6 +30,8 @@
 		20C2E54F29AFB17C000358BD /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E54E29AFB17C000358BD /* UIColor+Utils.swift */; };
 		20C2E55129AFB386000358BD /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E55029AFB386000358BD /* SkeletonCell.swift */; };
 		20C2E55429B0287E000358BD /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E55329B0287E000358BD /* ProfileManager.swift */; };
+		20C2E55629B02B6F000358BD /* AccountSummaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E55529B02B6F000358BD /* AccountSummaryViewControllerTests.swift */; };
+		20C2E55829B02D19000358BD /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E55729B02D19000358BD /* AccountManager.swift */; };
 		20FE31A929AD594D00054E6C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE31A829AD594D00054E6C /* NSNotificationName.swift */; };
 		20FE31AB29AD5C0000054E6C /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE31AA29AD5C0000054E6C /* UITextField+SecureToggle.swift */; };
 		20FF148329AEC65E00BD1239 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FF148229AEC65E00BD1239 /* Date+Utils.swift */; };
@@ -76,6 +78,8 @@
 		20C2E54E29AFB17C000358BD /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		20C2E55029AFB386000358BD /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		20C2E55329B0287E000358BD /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		20C2E55529B02B6F000358BD /* AccountSummaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerTests.swift; sourceTree = "<group>"; };
+		20C2E55729B02D19000358BD /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		20FE31A829AD594D00054E6C /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		20FE31AA29AD5C0000054E6C /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		20FF148229AEC65E00BD1239 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				20C2E55329B0287E000358BD /* ProfileManager.swift */,
+				20C2E55729B02D19000358BD /* AccountManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			children = (
 				20FF148829AEED1200BD1239 /* ProfileTests.swift */,
 				20FF148A29AEEF7100BD1239 /* AccountsTests.swift */,
+				20C2E55529B02B6F000358BD /* AccountSummaryViewControllerTests.swift */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				20A286A729A44A7400973A8F /* OnboardingContainerViewController.swift in Sources */,
 				20C2E54D29AFB02F000358BD /* SkeletonLoadable.swift in Sources */,
 				20FF148529AECBFC00BD1239 /* AccountSummaryViewController+Networking.swift in Sources */,
+				20C2E55829B02D19000358BD /* AccountManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +395,7 @@
 				20FF148B29AEEF7100BD1239 /* AccountsTests.swift in Sources */,
 				20B9398529AC178E006ADA97 /* CurrencyFormatterTests.swift in Sources */,
 				20FF148929AEED1200BD1239 /* ProfileTests.swift in Sources */,
+				20C2E55629B02B6F000358BD /* AccountSummaryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
