@@ -10,7 +10,7 @@ import XCTest
 
 @testable import Bankey
 
-class AccountSummaryViewController: XCTestCase {
+class AccountSummaryViewControllerTests: XCTestCase {
     var vc: AccountSummaryViewController!
     
     override func setUp() {
@@ -20,7 +20,17 @@ class AccountSummaryViewController: XCTestCase {
 //        vc.loadViewIfNeeded()
     }
     
-    func testSomething() throws {
+    func testTitleAndMessageForServerError() throws {
+        let titleAndMessage = vc.titleAndMessageForTesting(for: .serverError)
         
+        XCTAssertEqual("Server Error", titleAndMessage.title)
+        XCTAssertEqual("Ensure you are connected to the internet. Please try again.", titleAndMessage.message)
+    }
+    
+    func testTitleAndMessageForEncodingError() throws {
+        let titleAndMessage = vc.titleAndMessageForTesting(for: .decodingError)
+        
+        XCTAssertEqual("Decoding Error", titleAndMessage.title)
+        XCTAssertEqual("We could not process your request. Please try again.", titleAndMessage.message)
     }
 }

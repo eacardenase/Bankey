@@ -197,6 +197,12 @@ extension AccountSummaryViewController {
     }
     
     private func displayError(_ error: NetworkError) {
+        let titleAndMessage = titleAndMessage(for: error)
+        
+        self.showErrorAlert(title: titleAndMessage.title, message: titleAndMessage.message)
+    }
+    
+    private func titleAndMessage(for error: NetworkError) -> (title: String, message: String) {
         let title: String
         let message: String
         
@@ -209,7 +215,7 @@ extension AccountSummaryViewController {
             message = "We could not process your request. Please try again."
         }
         
-        showErrorAlert(title: title, message: message )
+        return (title, message)
     }
     
     private func showErrorAlert(title: String, message: String) {
@@ -239,5 +245,13 @@ extension AccountSummaryViewController {
         profile = nil
         accounts = []
         isLoaded = false
+    }
+}
+
+// MARK: - Unit Testing
+
+extension AccountSummaryViewController {
+    func titleAndMessageForTesting(for error: NetworkError) -> (title: String, message: String) {
+        return titleAndMessage(for: error)
     }
 }
