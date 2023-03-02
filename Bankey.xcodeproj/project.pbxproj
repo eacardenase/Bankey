@@ -29,6 +29,7 @@
 		20C2E54D29AFB02F000358BD /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E54C29AFB02F000358BD /* SkeletonLoadable.swift */; };
 		20C2E54F29AFB17C000358BD /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E54E29AFB17C000358BD /* UIColor+Utils.swift */; };
 		20C2E55129AFB386000358BD /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E55029AFB386000358BD /* SkeletonCell.swift */; };
+		20C2E55429B0287E000358BD /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2E55329B0287E000358BD /* ProfileManager.swift */; };
 		20FE31A929AD594D00054E6C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE31A829AD594D00054E6C /* NSNotificationName.swift */; };
 		20FE31AB29AD5C0000054E6C /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE31AA29AD5C0000054E6C /* UITextField+SecureToggle.swift */; };
 		20FF148329AEC65E00BD1239 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FF148229AEC65E00BD1239 /* Date+Utils.swift */; };
@@ -74,6 +75,7 @@
 		20C2E54C29AFB02F000358BD /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		20C2E54E29AFB17C000358BD /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		20C2E55029AFB386000358BD /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		20C2E55329B0287E000358BD /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		20FE31A829AD594D00054E6C /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		20FE31AA29AD5C0000054E6C /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		20FF148229AEC65E00BD1239 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
@@ -221,8 +223,17 @@
 				20FF148429AECBFC00BD1239 /* AccountSummaryViewController+Networking.swift */,
 				202B980C29A9217B0039ED62 /* Header */,
 				202B980D29A921A70039ED62 /* Cell */,
+				20C2E55229B02865000358BD /* Networking */,
 			);
 			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		20C2E55229B02865000358BD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				20C2E55329B0287E000358BD /* ProfileManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		20FF148629AEEBCD00BD1239 /* Utils */ = {
@@ -350,6 +361,7 @@
 				2071B00F29A676BB004A9118 /* LocalState.swift in Sources */,
 				209B80CE29ABD56000E4EEAF /* Decimal+Utils.swift in Sources */,
 				20FE31AB29AD5C0000054E6C /* UITextField+SecureToggle.swift in Sources */,
+				20C2E55429B0287E000358BD /* ProfileManager.swift in Sources */,
 				20C2E54F29AFB17C000358BD /* UIColor+Utils.swift in Sources */,
 				20BA502F29A8056F002BE657 /* AccountSummaryHeaderView.swift in Sources */,
 				209B80D029ABD5BF00E4EEAF /* CurrencyFormatter.swift in Sources */,
