@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol LogoutDelegate: AnyObject {
     func didLogout()
@@ -164,12 +165,14 @@ extension LoginViewController {
             return
         }
         
-        if username == "A" && password == "a" {
-            signInButton.configuration?.showsActivityIndicator = true
-            
-            delegate?.didLogin()
-        } else {
-            configureView(withMessage: "Incorrect username / password")
+        Auth.auth().signIn(withEmail: username, password: password) { authResult, error in
+            if error != nil {
+                self.configureView(withMessage: "Incorrect username / password")
+            } else {
+                self.signInButton.configuration?.showsActivityIndicator = true
+                
+                self.delegate?.didLogin()
+            }
         }
     }
     

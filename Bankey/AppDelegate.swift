@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 let appColor: UIColor = .systemTeal
 
@@ -28,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingContainerViewController.delegate = self
         
         registerForNotifications()
+        
+        FirebaseApp.configure()
         
         displayLogin()
         
